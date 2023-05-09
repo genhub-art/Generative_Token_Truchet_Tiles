@@ -2,7 +2,7 @@
 
 let colors = ["blue","red","green","yellow","orange","purple","pink","black","white","brown","grey","cyan","magenta"];
 let color = colors[Math.floor((rand()*colors.length))];
-let radius = 30 + Math.floor(rand()*300);
+let radius = 30 + Math.floor(rand()*70);
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
@@ -35,7 +35,7 @@ function draw() {
   background("ivory");
   stroke(0);
   fill(color);
-  circle(width/2,height/2,radius);
+  circle(width/2,height/2,radius/100 * Math.min(width,height))
 }
 
 
