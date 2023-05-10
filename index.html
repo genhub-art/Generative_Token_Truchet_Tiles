@@ -43,7 +43,7 @@
       var cyrb32seed = cyrb128(seed)
       var rand = sfc32(cyrb32seed[0], cyrb32seed[1], cyrb32seed[2], cyrb32seed[3])
       var token_id = new URLSearchParams(window.location.search).get('token_id') || Math.floor(rand() * 10000)
-      window.addEventListener("message", e => e.source.postMessage(window.metadata(), "*"), false);
+      window.addEventListener("message", e => e.data.type=="metadata" ? e.source.postMessage(window.metadata(), "*"): {} , false);
       //---- do not modify the above code block
     </script>
 
